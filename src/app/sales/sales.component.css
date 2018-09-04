@@ -1,0 +1,38 @@
+/*******************Sales And Products styles*******************/
+/*header immage*/
+.sales_and_products_img {
+    background:linear-gradient(rgba(0, 0, 0,0.6), rgba(0,0,0, 0.2)) ,url(/assets/resources/img/pics/on-shore.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/*WE WILL CHANGE THIS SECTION AFTER WE WILL ADD IMMAGES TO IT*/
+/*--------Products-Immages Section--------*/
+/*box-es container*/
+#products .boxes{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/*box container for each product*/
+#products  .box{
+    border-radius: 10%;
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    /* line-height: 250px; */
+}
+
+/*text inside box container(shape)*/
+#products  .box p{
+    display: inline-block;
+    font-size: 100%;
+    font-weight: 500;
+    color: white;
+}
+
+/*--------end of Products-Immages Section--------*/
+
+/*******************end of Sales-And-Products styles*******************/

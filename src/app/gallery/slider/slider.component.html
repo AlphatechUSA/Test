@@ -1,0 +1,11 @@
+<section>
+  <div class="row">
+    <a class="back-to-folders" (click)="onBackToFolders()">Back To folders</a>
+  </div>
+  <h3 [innerText]="galleryFolder.title"></h3>
+  <div class="ripslider">
+    <div *ngFor="let photo of galleryFolder.slider_photos">
+      <img class="rip-img" data-src="{{photo}}" alt="">
+    </div>
+  </div>
+</section>

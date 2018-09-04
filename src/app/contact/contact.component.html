@@ -1,0 +1,396 @@
+<section id="threed-cube">
+  <div id="options">
+    <div id="show-buttons">
+      <ul>
+        <li>
+          <a class="show-front">
+            <i class="ion-ios-email-outline"></i> mail form</a>
+        </li>
+        <li>
+          <a class="show-back">
+            <i class="ion-ios-personadd"></i> Join Us</a>
+        </li>
+        <li>
+          <a class="show-right">
+            <i class="ion-ios-location-outline"></i> Our Offices</a>
+        </li>
+        <li>
+          <a class="show-left">
+            <i class="ion-ios-people-outline"></i> Work with us</a>
+        </li>
+        <li>
+          <a class="show-top">
+            <i class="ion-social-facebook-outline"></i>Social Links</a>
+        </li>
+        <li>
+          <a class="show-bottom">
+            <i class="ion-ios-paperplane-outline"></i>Vacancies</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="theArt">
+    <div id="cube" class="show-front">
+
+      <!---Front side-->
+      <div id="front" class="front side">
+        <!---Contact_Form Section-->
+        <section id="contact">
+          <div class="contact-img header-img"></div>
+          <div class="row">
+            <h2>Send us a message</h2>
+            <h4 style="color:red" *ngIf="!f.valid && sendClicked">Please fill in all fileds</h4>
+            <h3 *ngIf="submited;else notSent">
+              <i class="ion-ios-checkmark-outline" style="color:green;font-size:200%"></i>
+              <br>Thank you
+              <br>Email has been sent
+            </h3>
+            <ng-template #notSent>
+              <h3 *ngIf="hasAnError">
+                <i class="ion-ios-close-outline" style="color:red;font-size:200%"></i>
+                <br>Sorry Mail was not Sent :(
+                <br>Please Email Us Directly To Info@Alphait.Us</h3>
+            </ng-template>
+            <form (ngSubmit)="onSend(f)" #f="ngForm">
+
+              <div>
+                <label for="first-name">FirstName</label>
+                <!-- <span class="error" *ngIf="!fName.valid && fName.touched">Please fill First Name</span> -->
+                <br>
+                <input type="text" name="first-name" placeholder="First name" ngModel required #fName="ngModel">
+                <br>
+              </div>
+
+              <div>
+                <label for="last-name">LastName</label>
+                <!-- <span class="error" *ngIf="!fLastName.valid && fLastName.touched">Please fill Last Name</span> -->
+                <br>
+                <input type="text" name="last-name" placeholder="Last name" ngModel required #fLastName="ngModel">
+              </div>
+
+              <div>
+                <label for="e-mail">Email</label>
+                <span class="error" *ngIf="!fEmail.valid && fEmail.touched">Please fill in correct Email</span>
+                <br>
+                <input type="text" name="e-mail" placeholder="Business Email" ngModel email required #fEmail="ngModel">
+              </div>
+
+              <div class="textarea-container">
+                <label for="text">What are you interested in?</label>
+                <!-- <span class="error" *ngIf="!fText.valid && fText.touched">Please fill in your questions</span> -->
+                <br>
+                <textarea placeholder="What are you interested in?" name="text" ngModel required #fText="ngModel"></textarea>
+              </div>
+              <!-- <input class="send-btn" type="submit"> -->
+              <button class="send-btn" type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+        <!---end of Contact_Form Section-->
+
+      </div>
+      <!---Back side-->
+      <div id="back" class="back side">
+        <!---Join_Team Section-->
+        <section id="join-team">
+          <h2>Interested In Joining Our Team?</h2>
+          <div class="row">
+            <a class="larg-link">Email info@alphait.us</a>
+          </div>
+          <div class="info-img box">
+            <img src="assets/resources/img/pics/career.jpg">
+          </div>
+        </section>
+        <!---end of Join_Team Section-->
+
+      </div>
+
+      <!---Right side-->
+      <div id="right" class="right side">
+        <!---Locations Section-->
+        <section id="our-locations">
+          <h2>Our offices</h2>
+
+          <div class="row">
+            <div class="large-box boxes title-with-subs">
+              <!-- <div id="map-head-office" class="map"></div> -->
+              <div class="box">
+                <h3>US Corporate Office Delaware</h3>
+                <ul>
+                  <p>
+                    704 N. King St
+                    <br> Wilmington, DE 19801
+                    <br> Phone: 302-510-8214
+                    <br> Fax: 908-847-0395
+                  </p>
+                </ul>
+              </div>
+
+              <div class="box">
+                <h3>Sales Offices</h3>
+                <ul>
+                  <p>
+                    Pennsylvania
+                    <br> 1456 Ferry road, #603
+                    <br> Doylestown PA 18901
+                    <br>NEW JERSEY
+                    <br> 65 Highway Rt. 173
+                    <br> Clinton, NJ 08809
+                  </p>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="row boxes title-with-subs">
+            <div class="box">
+              <h3>India</h3>
+              <!-- <div id="map-india-office" class="map"></div> -->
+              <ul>
+                <p>
+                  Building no. ITC-15,
+                  <br>IT Park,
+                  <br>Sector 67,
+                  <br>Mohali 160062
+                </p>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Poland</h3>
+              <!-- <div id="map-poland-office" class="map"></div> -->
+              <ul>
+                <p>
+                  Sklodowskiej-Curie 12
+                  <br> 50-148 Wroclaw
+                  <br> E-mail: alphapoland@alphait.us
+                </p>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Poland</h3>
+              <!-- <div id="map-poland-office-2" class="map"></div> -->
+              <ul>
+                <p>Warsaw
+                  <br> Q22
+                  <br> Jana pawla 2
+                  <br> E-mail: alphapoland@alphait.us
+                </p>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Georgia</h3>
+              <!-- <div id="map-georgia-office" class="map"></div> -->
+              <ul>
+                <p>
+                  Alpha Holding Georgia
+                  <br> Tskneti Highway N7
+                  <br> Tbilisi -0162, Georgia
+                  <br> Office: +995 568884729
+                  <br> E-mail :info@alphaholding.ge
+                </p>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>United Kingdom</h3>
+              <!-- <div id="map-london-office" class="map"></div> -->
+              <ul>
+                <p>
+                  Alpha HighQuest
+                  <br> London
+                  <br> N1 7GU
+                  <br> 20- 22 Wenlock Road
+                </p>
+              </ul>
+            </div>
+            <div class="box ">
+              <h3>Switzerland</h3>
+              <!-- <div id="map-switzerland-office" class="map"></div> -->
+              <ul>
+                <p>
+                  Alpha Highquest GmbH
+                  <br> 6300 - Zug
+                  <br> Grafenauweg 10
+                </p>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!---end of Locations Section-->
+      </div>
+
+      <!---Left side-->
+      <div id="left" class="left side">
+        <!---Work_with_us Section-->
+        <section id="work-with-us">
+          <h2>Work With Us?</h2>
+          <div class="row">
+            <div class="box">
+              Career Opportunities With Alpha Technologies Inc.
+              <br> Please send us a cover letter & resume outlining your job skills, employment history & educational background.
+              We will contact if there is any suitable opening for you.
+            </div>
+            <a href="mailto:navita@alphait.us?cc=jack@alphait.us&subject=Resume%20From%20Alphait.us&body=Resume submitted from alphait.us website"
+              class="larg-link">Send your resume now</a>
+          </div>
+          <div class="info-img box">
+            <img src="assets/resources/img/pics/career.jpg">
+          </div>
+        </section>
+        <!---end of Work_with_us Section-->
+
+      </div>
+      <!---Top side-->
+      <div id="top" class="top side">
+
+        <section>
+          <div class="row social-links-container">
+            <h2> Social Links</h2>
+            <a target="_blank" href="D:\sumba\Programming\projects\alphaIt\alphait design">
+              <i class="ion-social-facebook-outline facebook"></i>
+            </a>
+            <a target="_blank" href="https://twitter.com/alphatech1997">
+              <i class="ion-social-twitter-outline twitter"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/company/alpha-technologies-usa-inc">
+              <i class="ion-social-linkedin-outline linked-in"></i>
+            </a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCKzFLxJQzVyDnNdqy4sHnWw">
+              <i class="ion-social-youtube-outline youtube"></i>
+            </a>
+          </div>
+          <div class="row info-img-container">
+            <h2>certifications</h2>
+            <a target="_blank" href="https://www.dandb.com/verified/business/575447458/">
+              <img src="https://www.dandb.com/verified/images/business/verified_logo.png" alt="verified-img">
+            </a>
+            <img src="assets/resources/img/footer-img.jpg" />
+          </div>
+        </section>
+      </div>
+      <!---Bottom side-->
+      <div id="bottom" class="bottom side">
+        <section>
+          <h2>Vacancies</h2>
+          <div class="row boxes square-box-with-i title-with-subs">
+
+            <div class="box">
+              <h3>
+                <i class="ion-ios-thunderstorm-outline"></i>Position: Market research analyst
+              </h3>
+              <ul>
+                <div class="box-text">
+                  <h4>Posted 01/01/2018
+                    <br>Address : Wilmington HQ
+                  </h4>
+                  <div>
+                    <h4>Job Duties</h4>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Identifying the underlying principles, reasons, or facts of information by breaking down information
+                        or data into separate parts.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Using Structured Query language (SQL) extract data from spread across various tables in the database
+                        of CATS/HRMS and segregate the data for further analysis and create market segmentation, market profitability,
+                        competitor analysis reports, using strong analytical and data analysis skills and some basic SQL
+                        as well as ability to perform compiling, coding, categorizing, calculating, tabulating, auditing,
+                        or verifying information or data.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Produce weekly, monthly and quarterly reports showing sales and activity reports.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Use data cleansing and data interpolation techniques for missing data to construct new data points
+                        for analysis and report generation.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Analyzing information and evaluating results to choose the best solution and solve problems.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Use statistical techniques and linear regression to calculate key metrics and analyze data.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Advice management based on the outcome and generates actionable business impact recommendations utilizing
+                        strong analytical skill and statistics knowledge.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Identifying information by categorizing, estimating, recognizing differences or similarities, and detecting
+                        changes in circumstances or events.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Participate in continuous improvement initiative by performing what-if analysis on multiple scenarios
+                        to mitigate risk, increase sales and competitive advantage using forecasting techniques.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Monitor and forecast marketing and sales trends Measure the effectiveness of marketing programs and
+                        strategies
+                      </span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Devise and evaluate methods for collecting data, such as surveys, questionnaires, and opinion polls
+                        Gather data about consumers, competitors, and market conditions</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Analyze data using statistical software Convert complex data and findings into understandable tables,
+                        graphs, and written reports</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Prepare reports and present results to clients and management</span>
+                    </span>
+                  </div>
+                  <div>
+                    <h4>Job Requirements</h4>
+
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Bachelor's degree in Marketing, Management or equivalent, Master's degree is preferred.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Strong quantitative skill and mathematics knowledge. Keeping up-to-date technically and Using Relevant
+                        Knowledge.
+                      </span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Keep up to date on upcoming technologies in existing and potential market segments to identify growth
+                        opportunities and provide recommendation to management.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Using computers and computer systems (including hardware and software) to program, set up functions,
+                        enter data, or process information.</span>
+                    </span>
+                    <span class="icon-with-text">
+                      <i></i>
+                      <span>Use SAP Crystal Reports Business Intelligence tool, Microsoft Excel macros, functions, pivot tables
+                        and PSPP (Opensource SPSS software) to perform data operations to prepare weekly, monthly and quarterly
+                        reports.
+                      </span>
+                    </span>
+                  </div>
+                  <h4><span class="attenetion">If you are interested</span>
+                    <br>Send your cv to : Jack.Carter@alphait.us
+                      <br>In Subject specify : Market research analyst
+                    </h4>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
